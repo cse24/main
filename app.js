@@ -68,7 +68,9 @@ const db = require('./models');
 
 //라우팅
 //////////////////////////////////////////////////
-
+app.get('/', function(req,res){
+  res.send("Hello im minje");
+})
 app.use('/login', AuthRouter);
 app.use('/client',ClientRouter);
 app.use('/staff',StaffRouter);

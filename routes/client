@@ -8,7 +8,6 @@ router.get('/', async function(req, res){
         
         // where : {
         //     id_ : req.user.id,
-        //     check_num : 0
         // }
     });
 
@@ -18,8 +17,19 @@ router.get('/', async function(req, res){
     res.send({success:true , data: jsonArray});
 })
 
-router.post('/', function(req,res){
-    console.log(1);
+router.post('/', async function(req,res){
+    var requirementId = 0;
+
+    let require = await requirement.findAll({
+    });
+    console.log(require);
+    if(require.length === 0){
+        requirementId = 0;
+    }
+    else{
+        requirementId = require[require.length-1].requirementId + 1;
+    }
+
     // 의뢰인이 신청함.
 
     var post = req.body;
@@ -34,6 +44,7 @@ router.post('/', function(req,res){
     for(var i=0 ; i < address.length;i++){
         requirement.create({
             //id_ : `${id_}`,
+            requirementId : `${requirementId}`,
             address : `${address[i]}`,
             phone_number : `${phone_number[i]}`,
             date : `${date}`,
@@ -41,6 +52,8 @@ router.post('/', function(req,res){
             check_num : '0'
         })
     }
+
+    requirementId++;
 
     res.send({success: true,data:null});
 })
