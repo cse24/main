@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const {requirement} = require('../models');
 
-router.get('/', async function(req,res){
+router.post('/', async function(req,res){
     // 직원 메인화면.
     var post = req.body;
     var region = post.region;
