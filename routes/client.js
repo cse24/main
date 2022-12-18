@@ -43,7 +43,7 @@ router.post('/', async function(req,res){
     
     for(var i=0 ; i < address.length;i++){
         requirement.create({
-            //id_ : `${id_}`,
+            userId : `${id_}`,
             requirementId : `${requirementId}`,
             address : `${address[i]}`,
             phone_number : `${phone_number[i]}`,

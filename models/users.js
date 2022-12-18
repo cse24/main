@@ -39,6 +39,6 @@ module.exports = class User extends Sequelize.Model {
     });
   }
   static associate(db) {
-    User.hasMany(db.requirement, { foreignKey: 'requirementId', sourceKey: 'id'});
+    db.User.hasMany(db.Requirement, { foreignKey: 'userId', sourceKey: 'id'});
   }
 };

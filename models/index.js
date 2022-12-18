@@ -15,7 +15,7 @@ const requirement = require('./requirement');
 db.sequelize = sequelize;
 
 db.User = User;
-db.requirement = requirement;
+db.Requirement = requirement;
 
 User.init(sequelize);
 requirement.init(sequelize);

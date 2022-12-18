@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-module.exports = class User extends Sequelize.Model {
+module.exports = class Requirement extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
       requirementId: {
@@ -41,6 +41,6 @@ module.exports = class User extends Sequelize.Model {
     });
   }
   static associate(db){
-    db.User.belongsTo(db.User, {foreignKey: 'requirementId', targetKey: 'id'});
+    db.Requirement.belongsTo(db.User, {foreignKey: 'userId', targetKey: 'id'});
   };
 };
