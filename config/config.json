@@ -1,7 +1,7 @@
 {
     "development": {
       "username":"root",
-      "password": "qkwlek12!!",
+      "password": "alsdn120",
       "database": "HomeInspection",
       "port" : 3306,
       "host": "localhost",
@@ -9,17 +9,17 @@
       "logging" : false
     },
     "test": {
-        "username": "admin",
-        "password": "ohapjijol",
-        "database": "soldier_info",
+        "username": "root",
+        "password": null,
+        "database": "HOMEINSPECTION_test",
         "port" : 3312,
         "host": "osamdb.coc7mr48b01b.us-east-2.rds.amazonaws.com",
         "dialect": "mysql"
       },
     "production": {
-        "username": "admin",
-        "password": "ohapjijol",
-        "database": "soldier_info",
+        "username": "root",
+        "password": null,
+        "database": "HOMEINSPECTION_test",
         "port" : 3312,
         "host": "osamdb.coc7mr48b01b.us-east-2.rds.amazonaws.com",
         "dialect": "mysql"

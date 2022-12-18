@@ -19,6 +19,7 @@ router.get('/', async function(req, res){
 })
 
 router.post('/', function(req,res){
+    console.log(1);
     // 의뢰인이 신청함.
 
     var post = req.body;

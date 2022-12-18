@@ -1,7 +1,7 @@
 "use strict"
 //모듈 가져오기
-const fs = require('fs');
-const mysql = require('mysql');
+// const fs = require('fs');
+// const mysql = require('mysql');
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -11,19 +11,20 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const passport = require('passport');
 const nunjucks = require('nunjucks');
+var bodyParser = require('body-parser');
 ///////////////////////////////////////////////////
 
 dotenv.config();
 
 //라우팅 모듈
 const AuthRouter = require("./routes/user/auth");
-const ClientRouter = require("./client");
+const ClientRouter = require("./routes/client");
 
 const { sequelize } = require('./models');
 
 ///////////////////////////////////////////////////////////////////////
 const app = express();
-app.set('port', process.env.PORT||5000);
+app.set('port', process.env.PORT||3000);
 app.set('view engine', 'html');
 nunjucks.configure('views', {
   express: app,
@@ -31,10 +32,10 @@ nunjucks.configure('views', {
 });
 
 
-sequelize.sync({ force: false })
+sequelize.sync({ force: true })
   .then(() => {
 
-    console.log('database connected');
+    console.log('데이터 베이스 연결 성공');
   })
   .catch((err) => {
     console.log(err);
@@ -45,6 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(session({
   resave: false,
   saveUninitialized: false,
