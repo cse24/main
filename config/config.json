@@ -1,0 +1,27 @@
+{
+    "development": {
+      "username":"root",
+      "password": "qkwlek12!!",
+      "database": "HomeInspection",
+      "port" : 3306,
+      "host": "localhost",
+      "dialect": "mysql",
+      "logging" : false
+    },
+    "test": {
+        "username": "admin",
+        "password": "ohapjijol",
+        "database": "soldier_info",
+        "port" : 3312,
+        "host": "osamdb.coc7mr48b01b.us-east-2.rds.amazonaws.com",
+        "dialect": "mysql"
+      },
+    "production": {
+        "username": "admin",
+        "password": "ohapjijol",
+        "database": "soldier_info",
+        "port" : 3312,
+        "host": "osamdb.coc7mr48b01b.us-east-2.rds.amazonaws.com",
+        "dialect": "mysql"
+      }
+  }
