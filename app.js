@@ -19,6 +19,7 @@ dotenv.config();
 //라우팅 모듈
 const AuthRouter = require("./routes/user/auth");
 const ClientRouter = require("./routes/client");
+const StaffRouter = require("./routes/staff")
 
 const { sequelize } = require('./models');
 
@@ -70,6 +71,7 @@ const db = require('./models');
 
 app.use('/login', AuthRouter);
 app.use('/client',ClientRouter);
+app.use('/staff',StaffRouter);
 
 ////////////////////////////////////////////////////
 // catch 404 and forward to error handler
