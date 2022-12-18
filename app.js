@@ -33,7 +33,7 @@ nunjucks.configure('views', {
 });
 
 
-sequelize.sync({ force: true })
+sequelize.sync({ force: false })
   .then(() => {
 
     console.log('데이터 베이스 연결 성공');
@@ -52,7 +52,7 @@ app.use(bodyParser.json());
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: process.env.COOKIE_SECRET || 'qkwlek12!!',
+  secret: process.env.COOKIE_SECRET || 'alsdn120',
   cookie: {
     httpOnly: true,
     secure: false, // 배포시 true로 바꿀 것

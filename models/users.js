@@ -27,6 +27,10 @@ module.exports = class User extends Sequelize.Model {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      isClient: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
     }, {
       sequelize,
       timestamps: false,

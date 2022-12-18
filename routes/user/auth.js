@@ -41,6 +41,7 @@ router.post('/login', isNotLoggedIn, async (req, res, next) => {
             console.error(authError);
             return next(authError);
         }
+        console.log(req.body);
         if (!user) {
             return res.redirect('/?loginError=$i{info.message}');
         }
@@ -52,6 +53,7 @@ router.post('/login', isNotLoggedIn, async (req, res, next) => {
             const data = {
                 isClient : req.user.isClient,
             };
+            console.log(req.user);
             return res.json({ success: true, data });
 
         });

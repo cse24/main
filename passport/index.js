@@ -11,7 +11,7 @@ passport.use('local-login', new LocalStrategy({
     passwordField: 'password',
     session: true, // 세션을 사용할지 여부
     passReqToCallback: false, // callback함수에 req를 인자로 넘겨줌
-}, async (id, password, done) => {
+}, async (id_, password, done) => {
     try {
         const exUser = await User.findOne({ where: { id_ } });
         if (exUser) {
